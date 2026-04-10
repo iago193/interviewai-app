@@ -18,30 +18,35 @@ export function CreateUser() {
             <input
               className={inputStyle}
               id="name"
+              name="name"
               type="text"
               placeholder="Digite seu primeiro nome..."
             />
             <input
               className={inputStyle}
               id="lastName"
+              name="lastName"
               type="text"
               placeholder="Digite seu sobre nome..."
             />
             <input
               className={inputStyle}
               id="email"
+              name="email"
               type="email"
               placeholder="Digite seu e-mail.."
             />
             <input
               className={inputStyle}
               id="password"
+              name="password"
               type="password"
               placeholder="Digite sua senha.."
             />
             <input
               className={inputStyle}
               id="password-repeat"
+              name="password-repeat"
               type="password-repeat"
               placeholder="Repita sua senha.."
             />
