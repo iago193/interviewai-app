@@ -1,14 +1,23 @@
 import { FaGithub, FaAnglesRight } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 import { action } from "../../store/actions";
+import { useState } from "react";
 
 export function Login() {
+  const [error, setError] = useState<string>("");
   const inputStyle =
     "bg-gray-200 text-black transition mt-4 duration-300 rounded-lg p-2 w-full outline-0 focus:outline-2 transform focus:scale-102 outline-blue-300 focus:shadow-blue-400 shadow-sm";
-  const handleSubmit = (e: FormData) => {
-    const res = action(e);
-    console.log(res);
+
+  const handleSubmit = async (e: FormData) => {
+    try {
+      await action(e);
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      }
+    }
   };
+
   return (
     <section className="w-full h-screen">
       <div className="flex justify-center items-center w-full h-full">
@@ -47,6 +56,7 @@ export function Login() {
                 clique aqui!
               </a>
             </p>
+            {error && <p className="text-red-500 text-sm mt-1">*{error}</p>}
             <button
               type="submit"
               className="bg-blue-600 flex justify-center items-center gap-2 font-bold transition-all duration-300 cursor-pointer transform hover:shadow-blue-400 shadow-sm hover:scale-105 rounded-lg p-2 mt-4
