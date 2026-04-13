@@ -17,25 +17,27 @@ export function CreateUser() {
           <form action="#" className="mt-4">
             <input
               className={inputStyle}
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Digite seu primeiro nome..."
-            />
-            <input
-              className={inputStyle}
-              id="lastName"
-              name="lastName"
-              type="text"
-              placeholder="Digite seu sobre nome..."
-            />
-            <input
-              className={inputStyle}
               id="email"
               name="email"
               type="email"
-              placeholder="Digite seu e-mail.."
+              placeholder="Seu e-mail.."
             />
+            <div className="w-full grid grid-cols-2 gap-4">
+              <input
+                className={inputStyle}
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Primeiro nome..."
+              />
+              <input
+                className={inputStyle}
+                id="lastName"
+                name="lastName"
+                type="text"
+                placeholder="Seu sobre nome..."
+              />
+            </div>
             <input
               className={inputStyle}
               id="password"
@@ -57,11 +59,21 @@ export function CreateUser() {
               Criar <FaAnglesRight />
             </button>
           </form>
+          <div className="text-sm mt-4">
+            <label className="flex" htmlFor="check">
+              <input className="mx-1" id="check" type="checkbox" />
+              Concordo com os{" "}
+              <a className="text-blue-400 mx-1 cursor-pointer" href="#">
+                termos
+              </a>{" "}
+              e condições
+            </label>
+          </div>
           <div className="mt-10 border-t-2 border-t-gray-500">
             <h2 className=" bg-blue-800 mx-auto text-center w-10 -mt-3 text-sm">
               OU
             </h2>
-            <div className="block mt-6">
+            <div className="block mt-4">
               <button className="flex justify-around items-center gap-2 cursor-pointer">
                 <FaGithub size={25} />
                 <span>Criar com github</span>
@@ -72,6 +84,14 @@ export function CreateUser() {
                 <SiGmail className="bg-red-500 p-1 rounded-full" size={25} />
                 <span>Criar com Gmail</span>
               </button>
+              <div className="w-full text-center mt-6 py-4">
+                <h3 className="text-sm">
+                  Fazer{" "}
+                  <a className="text-blue-400" href="/">
+                    login
+                  </a>
+                </h3>
+              </div>
             </div>
           </div>
         </div>

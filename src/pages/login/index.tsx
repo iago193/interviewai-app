@@ -85,7 +85,7 @@ export function Login() {
           <div className="w-full text-center mt-6 py-4">
             <h3 className="text-sm">
               Não tem conta?{" "}
-              <a className="text-blue-400" href="#">
+              <a className="text-blue-400" href="/create-user">
                 crie uma
               </a>
             </h3>
